@@ -1,4 +1,7 @@
-const API_KEY = "0444b9e6522941b69aa05f0b3fb24153";
+import CONFIG from "./src/config.js";
+
+const API_KEY = CONFIG.API_KEY;
+
 const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
 const newList = document.getElementById("news-list");

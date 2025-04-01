@@ -1,3 +1,5 @@
+import CONFIG from "../config.js";
+
 const weather = document.getElementById("weather");
 
 const citySelect = document.createElement("select");
@@ -39,7 +41,7 @@ cities.forEach((city) => {
 });
 
 function fetchWeather(city) {
-  const API_KEY_WEATHER = "dc4189d582af401f926184231251803";
+  const API_KEY_WEATHER = CONFIG.API_KEY_WEATHER;
 
   const urlWeather = `https://api.weatherapi.com/v1/current.json?key=${API_KEY_WEATHER}&q=${city}`;
 

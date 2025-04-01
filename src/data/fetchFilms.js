@@ -1,4 +1,6 @@
-const API_KEY_FILMS = "802ae1c8";
+import CONFIG from "../config.js";
+
+const API_KEY_FILMS = CONFIG.API_KEY_FILMS;
 let filmsData = [];
 let currentIndex = 0;
 
