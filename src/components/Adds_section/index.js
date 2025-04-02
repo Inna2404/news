@@ -51,6 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
         Dolorum quas eligendi ab quis doloribus ex, nostrum atque
       </p>
     </div>
+
+    <div class = "ad_block_img">
+    <div></div>
+    <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    </div>
+    <div class = "ad_block_img">
+    <div></div>
+    <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    </div>   
+    <div class = "ad_block_img">
+    <div></div>
+    <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    </div>
   `;
   });
 });
