@@ -37,11 +37,10 @@ fetch(url)
   /* <img src="${article.urlToImage}"/> */
 }
 
-// Ініціалізуємо масив, якщо ще не було ініціалізовано
 let favoriteMovies = [];
 
-// Тепер можна виконати пошук та маніпуляції з масивом
-const id = "some-unique-id"; // або отримання id з елемента
+//  пошук та маніпуляції з масивом
+const id = "some-unique-id"; // отримання id з елемента
 const index = favoriteMovies.indexOf(id);
 
 if (index !== -1) {
