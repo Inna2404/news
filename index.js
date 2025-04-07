@@ -1,4 +1,4 @@
-import CONFIG from "./src/config.js";
+import CONFIG from "./src/generate-config.js";
 
 const API_KEY = CONFIG.API_KEY;
 
