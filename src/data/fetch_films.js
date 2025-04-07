@@ -15,6 +15,7 @@ function fetchFilms() {
         console.error("Don`t find films");
       }
     })
+
     .catch((error) => console.log(error));
 }
 

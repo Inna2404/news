@@ -1,4 +1,4 @@
-import CONFIG from "../generate-config.js";
+import CONFIG from "../config.js";
 
 const weather = document.getElementById("weather");
 
