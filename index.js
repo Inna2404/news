@@ -1,4 +1,4 @@
-import CONFIG from "../src/config.js";
+import CONFIG from "./src/config.js";
 
 const API_KEY = CONFIG.API_KEY;
 
@@ -19,6 +19,8 @@ fetch(url)
         hour: "2-digit",
         minute: "2-digit"
       });
+
+      console.log(process.env.API_KEY); // перевірка наявності API_KEY
 
       newItem.innerHTML = `
         <a href = "${article.url}" target = "_blank">
