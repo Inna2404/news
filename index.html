@@ -5,58 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News</title>
 
-    <link rel="stylesheet" type="text/css" href="./public/index.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
     <div class="news">
       <div class="news_container">
         <div id="header_container"></div>
-        <script src="../src/components/Header/index.js"></script>
+        <script src="/src/components/Header/index.js"></script>
         <div class="news_container_content">
           <aside class="news_aside_container">
             <div class="news_aside">
               <div id="news-select"></div>
-              <script src="./src/components/News_select/index.js"></script>
+              <script src="/src/components/News_select/index.js"></script>
               <div id="ads_block_container"></div>
             </div>
           </aside>
 
           <div id="main_news"></div>
-          <script src="./src/components/Main_news/index.js"></script>
+          <script src="/src/components/Main_news/index.js"></script>
 
           <aside class="aside_left_container">
             <div id="weather_container"></div>
-            <script src="./src/components/Weather_section/index.js"></script>
+            <script src="/src/components/Weather_section/index.js"></script>
 
             <div id="currency-container"></div>
-            <script src="./src/components/Currency/index.js"></script>
+            <script src="/src/components/Currency/index.js"></script>
 
             <div id="fuel-container"></div>
-            <script src="./src/components/Fuel/index.js"></script>
+            <script src="/src/components/Fuel/index.js"></script>
 
             <div id="films-container">
-              <script src="./src/components/Films/index.js"></script>
+              <script src="/src/components/Films/index.js"></script>
               <button id="prevBtn" class="slider-btn">&#10094;</button>
               <button id="nextBtn" class="slider-btn">&#10095;</button>
             </div>
 
-            <script
-              type="module"
-              src="./src/data/fetch_films.js"
-              defer
-            ></script>
+            <script type="module" src="/src/data/fetch_films.js" defer></script>
 
             <div id="ads_block_container"></div>
           </aside>
         </div>
       </div>
     </div>
-    <script type="module" src="./index.js"></script>
-    <script src="./src/components/Weather_view/index.js"></script>
-    <script src="./src/data/fetch_currency.js"></script>
-    <script src="./src/data/fetch_fuel.js"></script>
-    <script type="module" src="./src/data/fetch_weathe.js"></script>
-    <script src="./src/components/Adds_section/index.js"></script>
+    <script type="module" src="/index.js"></script>
+    <script src="/src/components/Weather_view/index.js"></script>
+    <script src="/src/data/fetch_currency.js"></script>
+    <script src="/src/data/fetch_fuel.js"></script>
+    <script type="module" src="/src/data/fetch_weathe.js"></script>
+    <script src="/src/components/Adds_section/index.js"></script>
 
     <script>
       document
