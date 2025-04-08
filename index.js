@@ -20,8 +20,6 @@ fetch(url)
         minute: "2-digit"
       });
 
-      console.log(process.env.API_KEY); // перевірка наявності API_KEY
-
       newItem.innerHTML = `
         <a href = "${article.url}" target = "_blank">
         <time>${timeString}</time>
