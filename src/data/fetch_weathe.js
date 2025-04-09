@@ -41,11 +41,11 @@ cities.forEach((city) => {
 });
 
 function fetchWeather(city) {
-  const API_KEY_WEATHER = process.env.API_KEY_WEATHER;
+  // const API_KEY_WEATHER = process.env.API_KEY_WEATHER;
 
-  // const urlWeather = `/api/weather?city=${city}`;
+  const urlWeather = `/api/weather?city=${city}`;
 
-  const urlWeather = `https://api.weatherapi.com/v1/current.json?key=${API_KEY_WEATHER}&q=${city}`;
+  // const urlWeather = `https://api.weatherapi.com/v1/current.json?key=${API_KEY_WEATHER}&q=${city}`;
 
   fetch(urlWeather)
     .then((response) => response.json())
