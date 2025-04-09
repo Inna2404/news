@@ -32,11 +32,6 @@ fetch(url)
   })
   .catch((error) => console.error("Error", error));
 
-{
-  // <p>${article.description}</p>
-  /* <img src="${article.urlToImage}"/> */
-}
-
 let favoriteMovies = [];
 
 //  пошук та маніпуляції з масивом
