@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const city = req.query.city;
-  const apiKey = process.env.API_KEY_WEATHER;
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY_WEATHER;
 
   try {
     const response = await fetch(
