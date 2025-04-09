@@ -21,7 +21,7 @@ document
     document.getElementById("fuel-section").style.display = "none";
     document.getElementById("films-section").style.display = "none";
 
-    getWeather();
+    // getWeather();
   });
 
 document

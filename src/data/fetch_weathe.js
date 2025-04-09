@@ -41,10 +41,14 @@ cities.forEach((city) => {
 });
 
 function fetchWeather(city) {
-  const API_KEY_WEATHER = process.env.NEXT_PUBLIC_API_KEY_WEATHER;
+  const API_KEY_WEATHER = CONFIG.API_KEY_WEATHER;
+
+  if (!API_KEY_WEATHER) {
+    console.error("API key is missing or not defined in .env");
+    return;
+  }
 
   // const urlWeather = `/api/weather?city=${city}`;
-
   const urlWeather = `https://api.weatherapi.com/v1/current.json?key=${API_KEY_WEATHER}&q=${city}`;
 
   fetch(urlWeather)
