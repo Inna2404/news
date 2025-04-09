@@ -1,6 +1,6 @@
-// import CONFIG from "../config.js";
+import CONFIG from "../config.js";
 
-const API_KEY_FILMS = process.env.API_KEY_FILMS;
+const API_KEY_FILMS = CONFIG.API_KEY_FILMS;
 let filmsData = [];
 let currentIndex = 0;
 
