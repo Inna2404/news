@@ -1,7 +1,8 @@
-const newsSelect = document.getElementById("news-select");
+document.addEventListener("DOMContentLoaded", () => {
+  const newsSelect = document.getElementById("news-select");
 
-if (newsSelect) {
-  newsSelect.innerHTML = `
+  if (newsSelect) {
+    newsSelect.innerHTML = `
          <div class="news_selected">
                 <h4>Selected</h4>
                 <a href="https://ua.sinoptik.ua">Sinoptik</a>
@@ -39,6 +40,7 @@ if (newsSelect) {
               </div>
     
     `;
-} else {
-  console.error("Element #news-select not found");
-}
+  } else {
+    console.error("Element #news-select not found");
+  }
+});
