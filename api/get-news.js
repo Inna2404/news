@@ -1,5 +1,5 @@
 export default async function handler(req, res) {
-  const apiKey = process.env.API_KEY;
+  const API_KEY = process.env.API_KEY;
 
   const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
