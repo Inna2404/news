@@ -15,14 +15,15 @@ const getApiKey = async () => {
 const API_KEY = await getApiKey();
 
 console.log(API_KEY);
+
 const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
-const getNews = async (url) => {
-  const response = await fetch(url);
+const getNews = async () => {
+  const response = await fetch("https://news-two-phi.vercel.app/api/get-news");
   const data = await response.json();
   return data; // одразу повертаєш тільки ключ
 };
-const news = await getNews(url);
+const news = await getNews();
 
 console.log(news);
 
