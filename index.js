@@ -12,43 +12,41 @@ const getApiKey = async () => {
   return data.key; // одразу повертаєш тільки ключ
 };
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const API_KEY = await getApiKey();
+const API_KEY = await getApiKey();
 
-  console.log(API_KEY);
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+console.log(API_KEY);
+const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
-  const checkInterval = setInterval(() => {
-    const newList = document.getElementById("news-list");
+const checkInterval = setInterval(() => {
+  const newList = document.getElementById("news-list");
 
-    if (newList) {
-      clearInterval(checkInterval);
+  if (newList) {
+    clearInterval(checkInterval);
 
-      fetch(url)
-        .then((repsonse) => repsonse.json())
-        .then((data) => {
-          console.log(data.articles);
+    fetch(url)
+      .then((repsonse) => repsonse.json())
+      .then((data) => {
+        console.log(data.articles);
 
-          data.articles.forEach((article) => {
-            const newItem = document.createElement("li");
+        data.articles.forEach((article) => {
+          const newItem = document.createElement("li");
 
-            const date = new Date(article.publishedAt);
-            const timeString = date.toLocaleTimeString("uk-UA", {
-              hour: "2-digit",
-              minute: "2-digit"
-            });
+          const date = new Date(article.publishedAt);
+          const timeString = date.toLocaleTimeString("uk-UA", {
+            hour: "2-digit",
+            minute: "2-digit"
+          });
 
-            newItem.innerHTML = `
+          newItem.innerHTML = `
         <a href = "${article.url}" target = "_blank">
         <time>${timeString}</time>
         <h3>${article.title}</h3> 
         <span/>
         </a>
       `;
-            newList.appendChild(newItem);
-          });
-        })
-        .catch((error) => console.error("Error", error));
-    }
-  }, 100);
-});
+          newList.appendChild(newItem);
+        });
+      })
+      .catch((error) => console.error("Error", error));
+  }
+}, 100);
