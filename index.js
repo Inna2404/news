@@ -5,21 +5,22 @@
 // const API_KEY = process.env.API_KEY;
 
 // console.log(API_KEY);
+const baseDomain = window.location.hostname;
 
-const getApiKey = async () => {
-  const response = await fetch("https://news-two-phi.vercel.app/api/get-data");
-  const data = await response.json();
-  return data.key; // одразу повертаєш тільки ключ
-};
+// const getNewsUrl = async () => {
+//   const response = await fetch(`${baseDomain}/api/get-data`);
+//   const data = await response.json();
+//   return data;
+// };
 
-const API_KEY = await getApiKey();
+// const urlNews = await getNewsUrl();
 
-console.log(API_KEY);
+// console.log(urlNews);
 
-const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+// const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
 const getNews = async () => {
-  const response = await fetch("https://news-two-phi.vercel.app/api/get-news");
+  const response = await fetch(`${baseDomain}/api/get-news`);
   const data = await response.json();
   return data; // одразу повертаєш тільки ключ
 };
