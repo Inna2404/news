@@ -13,9 +13,9 @@ const getApiKey = async () => {
 document.addEventListener("DOMContentLoaded", async () => {
   const API_KEY = await getApiKey();
 
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
-
   console.log(API_KEY);
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY.key}`;
+
   const checkInterval = setInterval(() => {
     const newList = document.getElementById("news-list");
 
