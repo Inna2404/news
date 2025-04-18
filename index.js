@@ -1,11 +1,20 @@
-import CONFIG from "./src/config.js";
+// import CONFIG from "./src/config.js";
 
-const API_KEY = CONFIG.API_KEY;
+// const API_KEY = CONFIG.API_KEY;
+
+// const API_KEY = process.env.API_KEY;
 
 const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+console.log(API_KEY);
 
 document.addEventListener("DOMContentLoaded", () => {
   const checkInterval = setInterval(() => {
+    fetch("/api/get-data")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Отримано з сервера:", data);
+      });
+
     const newList = document.getElementById("news-list");
 
     if (newList) {
