@@ -27,36 +27,57 @@ const news = await getNews();
 
 console.log(news);
 
-const checkInterval = setInterval(() => {
-  const newList = document.getElementById("news-list");
+const newList = document.getElementById("news-list");
 
-  if (newList) {
-    clearInterval(checkInterval);
+news?.articles.forEach((article) => {
+  const newItem = document.createElement("li");
 
-    fetch(url)
-      .then((repsonse) => repsonse.json())
-      .then((data) => {
-        console.log(data.articles);
+  const date = new Date(article.publishedAt);
+  const timeString = date.toLocaleTimeString("uk-UA", {
+    hour: "2-digit",
+    minute: "2-digit"
+  });
 
-        data.articles.forEach((article) => {
-          const newItem = document.createElement("li");
+  newItem.innerHTML = `
+   <a href = "${article.url}" target = "_blank">
+  <time>${timeString}</time>
+  <h3>${article.title}</h3> 
+  <span/>
+  </a>
+`;
+  newList.appendChild(newItem);
+});
 
-          const date = new Date(article.publishedAt);
-          const timeString = date.toLocaleTimeString("uk-UA", {
-            hour: "2-digit",
-            minute: "2-digit"
-          });
+// const checkInterval = setInterval(() => {
+//   const newList = document.getElementById("news-list");
 
-          newItem.innerHTML = `
-        <a href = "${article.url}" target = "_blank">
-        <time>${timeString}</time>
-        <h3>${article.title}</h3> 
-        <span/>
-        </a>
-      `;
-          newList.appendChild(newItem);
-        });
-      })
-      .catch((error) => console.error("Error", error));
-  }
-}, 100);
+//   if (newList) {
+//     clearInterval(checkInterval);
+
+//     fetch(url)
+//       .then((repsonse) => repsonse.json())
+//       .then((data) => {
+//         console.log(data.articles);
+
+//         data.articles.forEach((article) => {
+//           const newItem = document.createElement("li");
+
+//           const date = new Date(article.publishedAt);
+//           const timeString = date.toLocaleTimeString("uk-UA", {
+//             hour: "2-digit",
+//             minute: "2-digit"
+//           });
+
+//           newItem.innerHTML = `
+//            <a href = "${article.url}" target = "_blank">
+//           <time>${timeString}</time>
+//         <h3>${article.title}</h3>
+//         <span/>
+//         </a>
+//       `;
+//           newList.appendChild(newItem);
+//         });
+//       })
+//       .catch((error) => console.error("Error", error));
+//   }
+// }, 100);
