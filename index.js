@@ -5,7 +5,7 @@
 // const API_KEY = process.env.API_KEY;
 
 // console.log(API_KEY);
-const baseDomain = window.location.hostname;
+// const baseDomain = window.location.hostname;
 
 // const getNewsUrl = async () => {
 //   const response = await fetch(`${baseDomain}/api/get-data`);
@@ -20,7 +20,7 @@ const baseDomain = window.location.hostname;
 // const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
 const getNews = async () => {
-  const response = await fetch(`${baseDomain}/api/get-news`);
+  const response = await fetch(`/api/get-news`);
   const data = await response.json();
   return data; // одразу повертаєш тільки ключ
 };
