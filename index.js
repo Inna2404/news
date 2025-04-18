@@ -7,14 +7,16 @@
 // console.log(API_KEY);
 
 const getApiKey = async () => {
-  const repsonse = await fetch("https://news-two-phi.vercel.app/api/get-data");
-  return repsonse?.key;
+  const response = await fetch("https://news-two-phi.vercel.app/api/get-data");
+  const data = await response.json();
+  return data.key; // одразу повертаєш тільки ключ
 };
+
 document.addEventListener("DOMContentLoaded", async () => {
   const API_KEY = await getApiKey();
 
   console.log(API_KEY);
-  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY.key}`;
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
   const checkInterval = setInterval(() => {
     const newList = document.getElementById("news-list");
