@@ -4,17 +4,19 @@
 
 // const API_KEY = process.env.API_KEY;
 
-const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey`;
 // console.log(API_KEY);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const checkInterval = setInterval(() => {
-    fetch("https://news-two-phi.vercel.app/api/get-data")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Отримано з сервера:", data);
-      });
+const getApiKey = async () => {
+  const repsonse = await fetch("https://news-two-phi.vercel.app/api/get-data");
+  return repsonse?.key;
+};
+document.addEventListener("DOMContentLoaded", async () => {
+  const API_KEY = await getApiKey();
 
+  const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
+
+  console.log(API_KEY);
+  const checkInterval = setInterval(() => {
     const newList = document.getElementById("news-list");
 
     if (newList) {
