@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const { city } = req.query;
 
   if (!city) {
-    res.status(400).json({ error: "city is required" });
+    return res.status(400).json({ error: "city is required" });
   }
 
   const url = `${WEATHER_URL}?key=${API_KEY_WEATHER}&q=${city}`;
