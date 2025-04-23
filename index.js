@@ -1,7 +1,3 @@
-// import CONFIG from "./src/config.js";
-
-// const API_KEY = CONFIG.API_KEY;
-
 // const API_KEY = process.env.API_KEY;
 
 // console.log(API_KEY);
@@ -22,7 +18,7 @@
 const getNews = async () => {
   const response = await fetch(`/api/get-news`);
   const data = await response.json();
-  return data; // одразу повертаєш тільки ключ
+  return data;
 };
 const news = await getNews();
 
